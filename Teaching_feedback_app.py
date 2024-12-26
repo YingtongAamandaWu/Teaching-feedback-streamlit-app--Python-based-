@@ -1,3 +1,24 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# Some helpful tutorials:
+# 
+# https://medium.com/@iamleonie/recreating-amazons-new-generative-ai-feature-product-review-summaries-50640e40872a
+# 
+# https://medium.com/@abed63/flask-application-with-openai-chatgpt-integration-tutorial-958588ac6bdf
+# 
+# https://github.com/openai/openai-python/discussions/742
+# 
+# https://www.listendata.com/2023/03/open-source-chatgpt-models-step-by-step.html
+# 
+# https://www.geeksforgeeks.org/mastering-text-summarization-with-sumy-a-python-library-overview/
+# 
+# https://blog.streamlit.io/host-your-streamlit-app-for-free/
+# 
+
+# In[7]:
+
+
 import streamlit as st
 from textblob import TextBlob
 from nltk.corpus import stopwords
@@ -12,6 +33,9 @@ from sumy.summarizers.text_rank import TextRankSummarizer
 from sumy.summarizers.lex_rank import LexRankSummarizer
 from nltk.tokenize import sent_tokenize
 import nltk
+
+
+# In[ ]:
 
 
 # Ensure necessary resources are downloaded
@@ -36,10 +60,11 @@ def summarize_text_sumy(text, algorithm="LSA", sentences_count=2):
     return " ".join(str(sentence) for sentence in summary)
 
 # Streamlit App
-st.title("Text Summarizer with Sentiment Analysis, WordCloud, and Sumy Integration")
+st.title("Feedback Summarizer with NLP (Natural Language Processing), Sentiment Analysis, and Review Summary")
 st.write(
-    "Enter text below, select a summarization algorithm, and the app will provide "
-    "a summary, sentiment analysis, an interactive sentiment boxplot, and a WordCloud visualization."
+    "Please copy paste all the reviews/feedback below, select a summarization algorithm (please find"
+    "the different algorithms here https://www.analyticsvidhya.com/blog/2024/07/automated-text-summarization-with-sumy-library/#h-luhn-summarizer),"
+    "and the app will provide a summary, sentiment analysis, an interactive sentiment boxplot, and a WordCloud visualization."
 )
 
 # Input Text
@@ -54,8 +79,8 @@ summarization_algorithm = st.selectbox(
 
 # Input for Exclusion Words
 excluded_words_input = st.text_input(
-    "Enter additional words to exclude from the WordCloud (comma-separated):", 
-    placeholder="e.g., data, analysis"
+    "Enter additional words to *exclude* from the WordCloud (comma-separated):", 
+    placeholder="e.g., course, product, service"
 )
 
 # Process Excluded Words
