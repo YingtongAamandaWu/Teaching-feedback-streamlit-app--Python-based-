@@ -1,21 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# Some helpful tutorials:
-# 
-# https://medium.com/@iamleonie/recreating-amazons-new-generative-ai-feature-product-review-summaries-50640e40872a
-# 
-# https://medium.com/@abed63/flask-application-with-openai-chatgpt-integration-tutorial-958588ac6bdf
-# 
-# https://github.com/openai/openai-python/discussions/742
-# 
-# https://www.listendata.com/2023/03/open-source-chatgpt-models-step-by-step.html
-# 
-# https://www.geeksforgeeks.org/mastering-text-summarization-with-sumy-a-python-library-overview/
-# 
-
-# In[7]:
-
+pip install -r requirements.txt
 
 import streamlit as st
 from textblob import TextBlob
@@ -31,9 +14,6 @@ from sumy.summarizers.text_rank import TextRankSummarizer
 from sumy.summarizers.lex_rank import LexRankSummarizer
 from nltk.tokenize import sent_tokenize
 import nltk
-
-
-# In[ ]:
 
 
 # Ensure necessary resources are downloaded
