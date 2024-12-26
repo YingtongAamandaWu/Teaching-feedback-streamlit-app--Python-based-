@@ -1,5 +1,3 @@
-pip install -r requirements.txt
-
 import streamlit as st
 from textblob import TextBlob
 from nltk.corpus import stopwords
