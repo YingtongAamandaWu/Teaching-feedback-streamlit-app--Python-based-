@@ -38,6 +38,7 @@ from textblob import download_corpora
 # Download necessary NLTK resources
 nltk.download('punkt', quiet=True)  # Tokenizer for sentence splitting
 nltk.download('stopwords', quiet=True)  # Stopwords for filtering
+nltk.download('punkt_tab')
 
 # Download TextBlob corpora
 from textblob.download_corpora import download_all
