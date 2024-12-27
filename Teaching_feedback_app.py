@@ -35,18 +35,25 @@ from nltk.tokenize import sent_tokenize
 import nltk
 from textblob import download_corpora
 
+# Download necessary NLTK resources
+nltk.download('punkt', quiet=True)  # Tokenizer for sentence splitting
+nltk.download('stopwords', quiet=True)  # Stopwords for filtering
+
+# Download TextBlob corpora
+try:
+    download_corpora()  # Downloads corpora required by TextBlob
+except Exception as e:
+    print(f"Error downloading TextBlob corpora: {e}")
+
 
 # In[ ]:
 
 
 # Ensure necessary resources are downloaded
-nltk.download('punkt', quiet=True)
-nltk.download('stopwords', quiet=True)
 nltk.download('averaged_perceptron_tagger', quiet=True)
 nltk.download('wordnet', quiet=True)
 nltk.download('omw-1.4', quiet=True)  # For wordnet synonyms
 nltk.download('brown', quiet=True)    # Optional for TextBlob corpora
-
 
 # Function to generate summary using Sumy
 def summarize_text_sumy(text, algorithm="LSA", sentences_count=2):
