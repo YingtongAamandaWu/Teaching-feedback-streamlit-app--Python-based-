@@ -41,6 +41,13 @@ import nltk
 # Ensure necessary resources are downloaded
 nltk.download('punkt', quiet=True)
 nltk.download('stopwords', quiet=True)
+nltk.download('averaged_perceptron_tagger', quiet=True)
+nltk.download('wordnet', quiet=True)
+nltk.download('omw-1.4', quiet=True)  # For wordnet synonyms
+nltk.download('brown', quiet=True)    # Optional for TextBlob corpora
+
+from textblob import download_corpora
+download_corpora()  # Ensure TextBlob corpora are downloaded
 
 # Function to generate summary using Sumy
 def summarize_text_sumy(text, algorithm="LSA", sentences_count=2):
