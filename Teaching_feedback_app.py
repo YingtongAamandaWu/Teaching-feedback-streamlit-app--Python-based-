@@ -16,7 +16,7 @@
 # https://blog.streamlit.io/host-your-streamlit-app-for-free/
 # 
 
-# In[7]:
+# In[2]:
 
 
 import streamlit as st
@@ -40,10 +40,8 @@ nltk.download('punkt', quiet=True)  # Tokenizer for sentence splitting
 nltk.download('stopwords', quiet=True)  # Stopwords for filtering
 
 # Download TextBlob corpora
-try:
-    download_corpora()  # Downloads corpora required by TextBlob
-except Exception as e:
-    print(f"Error downloading TextBlob corpora: {e}")
+from textblob.download_corpora import download_all
+download_all()  # Correct function to download all required corpora
 
 
 # In[ ]:
