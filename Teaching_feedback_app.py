@@ -62,9 +62,8 @@ def summarize_text_sumy(text, algorithm="LSA", sentences_count=2):
 # Streamlit App
 st.title("Feedback Summarizer with NLP (Natural Language Processing), Sentiment Analysis, and Review Summary")
 st.write(
-    "Please copy paste all the reviews/feedback below, select a summarization algorithm (please find"
-    "the different algorithms here https://www.analyticsvidhya.com/blog/2024/07/automated-text-summarization-with-sumy-library/#h-luhn-summarizer),"
-    "and the app will provide a summary, sentiment analysis, an interactive sentiment boxplot, and a WordCloud visualization."
+    "Please center text below, select a summarization algorithm, and the app will provide "
+    "a summary, sentiment analysis, an interactive sentiment boxplot, and a WordCloud visualization."
 )
 
 # Input Text
@@ -79,8 +78,8 @@ summarization_algorithm = st.selectbox(
 
 # Input for Exclusion Words
 excluded_words_input = st.text_input(
-    "Enter additional words to *exclude* from the WordCloud (comma-separated):", 
-    placeholder="e.g., course, product, service"
+    "Enter additional words to exclude from the WordCloud (comma-separated):", 
+    placeholder="e.g., data, analysis"
 )
 
 # Process Excluded Words
